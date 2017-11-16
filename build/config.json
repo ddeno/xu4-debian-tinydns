@@ -1,0 +1,29 @@
+{
+    "domain": "nowhwere.here",
+    "nameserver": "ns1",
+    "tinydns": {
+        "data_limit": 300000,
+        "ip_address": "127.0.0.1",
+        "uid": 1,
+        "gid": 2,
+        "root": "/etc/ndjbdns",
+        "debug_level": 1,
+        "entries": {
+            "nameservers": ["192.168.1.50"],
+            "aliases": [],
+            "cnames": []
+        }
+    },
+    "dnscache": {
+        "data_limit": 300000,
+        "ip_address": "127.0.0.1",
+        "uid": 1,
+        "gid": 2,
+        "ip_send": "0.0.0.0",
+        "root": "/etc/ndjbdns",
+        "hide_ttl": "",
+        "forward_only": "",
+        "merge_queries": 1,
+        "debug_level": 1
+    }
+}
