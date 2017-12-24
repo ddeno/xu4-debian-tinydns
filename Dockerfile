@@ -31,19 +31,6 @@ RUN cd /root/ndjbdns && ./configure --prefix=/usr/local --sysconfdir=/etc
 # Build ndjbdns
 RUN cd /root/ndjbdns && make && make install
 
-# Copy systemd services and sockets
-# RUN cp /usr/local/lib/systemd/system/*.service /lib/systemd/system/ 
-# RUN cp /usr/local/lib/systemd/system/*.socket /lib/systemd/system/ 
-
-# Inform systemd about new services
-# RUN systemctl daemon-reload
-
-# Setup our log files
-
-# Restart rsyslog
-
-# Now time to configure
-
-# Now since we are configured, start
-# VOLUME /var/log/dnscache.log:/var/log/dnscache.log
-# VOLUME /var/log/tinydns.log:/var/log/tinydns.log our service script to run in containter
+# Set our entrypoint
+COPY build/entry.sh /root/run_tinydns.sh
+RUN chmod +x /root/run_tinydns.sh
